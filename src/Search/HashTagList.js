@@ -4,26 +4,17 @@ import HashTagForm from './HashTagForm';
 
 
 
-export default  class HashTagList extends React.Component {
-  constructor() {
-    super()
-    this.state = { 
-      hashtags: []
-    }
-  }
+export default  function HashTagList () {
+  const[hashtags, setHashTags] = useState([])
 
-  addHashtag = (hashtag) => {
-    this.setState({
-      hashtags: [hashtag, ...this.state.hashtags]
-    })
+  const addHashtag = (hashtag) => {
+    setHashTags([...hashtag, {id: Date.now()}, ])
   }
-
-  render() {
     return(
       <div>
-      <HashTagForm onSubmit={this.addHashtag}/>
+      <HashTagForm onSubmit={addHashtag}/>
       {
-        this.state.hashtags.map(({id, text}) => (
+        hashtags.map(({id, text}) => (
           <div key={id}>
             {text}
           </div>
@@ -32,4 +23,4 @@ export default  class HashTagList extends React.Component {
       </div>
     )
   }
-}
+

@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import HashTagList from './Search/HashTagList';
+import HashTagForm from './Search/HashTagForm';
 
 function App() {
 
+const[hashtags, setHashTag] = useState([])
  
   return (
     <div className="App">
       <h1>HashTag Mini App</h1>
-      <HashTagList/>
+      <HashTagForm onSubmit={text=> setHashTag([{text, complete: false}, ...hashtags])}/>
+      <div>
+        {
+          hashtags.map(({ text }) => (
+            <div key={text}>
+                {text}
+            </div>
+          ))
+        }
+      </div>
     </div>
   );
 }
