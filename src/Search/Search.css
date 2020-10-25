@@ -1,0 +1,51 @@
+input {
+    padding:10px 30px 5px 5px;
+    border: 1.5px solid orange;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+}
+
+form {
+    text-align: center;
+}
+
+.searchButton {
+    position: relative;
+    z-index: 2;
+}
+
+input[type='text'] {
+    color: black;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+    width: 50%;
+}
+
+input[type='submit'] {
+    border-radius: 0 20px 20px 0;
+    background-color: orange;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+}
+@media(min-width:600px) {
+    input {
+        padding:20px 40px 5px 5px;
+        /* margin-left: 25%; */
+        font-size: 1rem;
+    }
+
+    input[type='text'] {
+    width: 400px;
+    height: 64px;
+    font-size: 25px;
+}
+
+input[type='submit'] {
+    height: 64px;
+    font-size: 1.1rem;
+    left: -5px;
+    bottom:3px;
+}
+}
